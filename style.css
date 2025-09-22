@@ -1,0 +1,244 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+    --color-success: #065B06;
+    --color-error: #ff5a5a;
+    --color-error-hover: #d9534f; 
+    --border-radius: 25px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: clamp(32px, 8vw, 64px) clamp(32px, 8vw, 64px) 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 3rem;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+}
+
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.input-name, .input-title {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    font-family: "Merriweather", serif;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.button-container {
+    width: 300px;
+    justify-content: center;
+}
+
+/* Estilos de botón */
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    outline: none;
+}
+
+.button-add {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+
+/* Listas */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 1.125rem;
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: var(--color-success);
+    font-size: 1.375rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón de sortear título */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 1rem;
+}
+
+
+.button-draw img {
+    margin-right: 40px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Botón reinciar juego */
+.button-reload {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-tertiary);
+    font-size: 1rem;
+}
+
+.button-reload img {
+    margin-right: 40px;
+}
+
+.button-reload:hover {
+    background-color: #a1a1a1;
+}
+
+/*boton eliminar*/
+.delete-button {
+    background-color: var(--color-error);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: var(--transition);
+}
+
+.delete-button:hover {
+    background-color: var(--color-error-hover);
+}
+
+
+@media (max-width: 800px) {
+    
+    .header-banner {
+        flex-direction: column-reverse;
+    }
+    .main-title {
+        font-size: 2.5rem; 
+    }
+
+    .section-title {
+        font-size: 2rem; 
+    }
+    .input-wrapper {
+        max-width: 90%;
+    }
+
+    .button-container {
+        width: 80%; 
+    } 
+    .button-draw, .button-reload {
+        padding: 12px 20px; 
+        font-size: 0.875rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem; /* 32px */
+    }
+    .section-title {
+        font-size: 1.75rem; /* 28px */
+    }
+}
+
+@media (min-width: 1025px) {
+    
+    .button-draw, .button-reload {
+        font-size: 18px; 
+        padding: 15px 50px; 
+    }
+}
